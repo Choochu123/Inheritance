@@ -44,4 +44,9 @@ public abstract class Event {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public void printMe(){
+        System.out.println("Name: " + eventName + " ID:" + eventID + " Type:" + eventType + " Location:" + location + " Time:" + time);
+    }
+
 }//end event

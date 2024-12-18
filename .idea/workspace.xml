@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d347db3d-fdc9-4f1b-940f-de355116165b" name="Changes" comment="Initial">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ex3_MusicFestival/NonMusicEvent2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ex3_MusicFestival/Activities.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Ex1_Animals/Animal.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex1_Animals/Ex1_Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex2_Restaurant/Employee.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex2_Restaurant/Manager.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex2_Restaurant/Restaurant_Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex3_MusicFestival/Activities.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex3_MusicFestival/Event.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex3_MusicFestival/Ex3_Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex3_MusicFestival/Library.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Ex3_MusicFestival/MainStageEvent.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

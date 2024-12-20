@@ -30,6 +30,8 @@ public class Ex3_Main {
         allEvents.add(new NonMusicEvent("Zev's Toys", "souvenir sales", "Truck 7"));
 
         allEvents.add(new SmallStageEvent("Chu's Chuckles", "performance", "Comedy"));
+        allEvents.add(new SmallStageEvent( "Fluffy's Comedy", "performance", "Comedy"));
+
 
         //        allEvents.add(new NonMusicEvent("Curry Connection", "food truck", "Truck 9"));
 //

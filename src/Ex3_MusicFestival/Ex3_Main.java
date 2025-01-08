@@ -81,7 +81,7 @@ public class Ex3_Main {
                     finished = true;
                     break;
                 default:
-                    System.out.println("Number out of bounds. Please pick a whole number between 1 and 9");
+                    System.out.println("Number out of bounds. Please pick a whole number between 1 and 6");
                     break;
             }
             if (finished) {
@@ -110,7 +110,7 @@ public class Ex3_Main {
             }
         } else if (eventClass.equalsIgnoreCase("Activities")) {
                 System.out.println("What event type is your activity? (e.g physical, art)");
-                String activityType = Library.input.next();
+                String activityType = Library.input.nextLine();
 
                 System.out.println("Where is the location of your event?");
                 String eventLoc = Library.input.nextLine();
@@ -170,7 +170,7 @@ public class Ex3_Main {
     }//filterByEventType
 
     public static void printAllEvents() {
-        System.out.println("Non-Music Events: ");
+        System.out.println("Activities: ");
         printActivities();
         System.out.println();
         System.out.println("Main Stage Events:");

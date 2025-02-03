@@ -28,6 +28,13 @@ public class Library {
         return TEXT_BLUE + word + TEXT_RESET;
     }//printBlue
 
+    public static int[] generateArray(int arrLength, int minVal, int maxVal) {
+        int[] numArr = new int[arrLength];
+        for (int i = 0; i < arrLength; i++) {
+            numArr[i] = Library.myRandom(minVal, maxVal);
+        }
+        return numArr;
+    }//generateArray
 
 
 

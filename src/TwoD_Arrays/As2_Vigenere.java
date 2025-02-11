@@ -7,12 +7,23 @@ public class As2_Vigenere {
     public static final String ANSI_RESET = "\u001B[0m";
 
     public static void run() {
-        char[] key = {'S', 'C', 'O', 'N', 'A'};
         char[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
                 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
         char[][] vigenere = createVSquare(alphabet);
-        printSquare(vigenere);
-        System.out.println(getChar(vigenere, 0,0));
+
+        while (true) {
+            printSquare(vigenere);
+            System.out.println("What is your key code?");
+            String key = Library.input.nextLine();
+
+            System.out.println("What is your message?");
+            String crypt = Library.input.nextLine();
+
+            crypt = crypt.toUpperCase();
+            key = key.toUpperCase();
+            String decryptedMessage = decrypt(crypt, key);
+            System.out.println("The decrypted message is: " + decryptedMessage);
+        }
     }
 
     private static char[][] createVSquare(char[] alphabet) {
@@ -65,11 +76,16 @@ public class As2_Vigenere {
         return square[rowNum][colNum];
     }
 
-//    public static void decrypt(String crypt, char[] key, char[][] square){
-//        char[] c = crypt.toCharArray();
-//
-//
-//    }//decrypt
+    public static String decrypt(String message, String key) {
+        String decryptMessage = "";
+        message = message.toUpperCase();
+        for (int i = 0, j = 0; i < message.length(); i++) {
+            char letter = message.charAt(i);
+            decryptMessage += (char) ((letter - key.charAt(j) + 26) % 26 + 65);
+            j = ++j % key.length();
+        }
+        return decryptMessage;
+    }
 
 }//end class
 

@@ -23,25 +23,23 @@ public class As1_Bingo {
 
         while (true) {
             Library.input.nextLine();
-            int number = myRandom(1, 1);
+            int number = myRandom(1, 75);
             System.out.println("The number chosen is: " + number);
 
-            for (int i = 0; i < scorecard.length; i++) {
-                for (int j = 0; j < scorecard.length; j++) {
-                    if(scorecard[i][j] == number){
-                        scorecard[i][j] = scorecard[i][j] * -1;
+                for (int i = 0; i < scorecard.length; i++) {
+                    for (int j = 0; j < scorecard.length; j++) {
+                        if (scorecard[i][j] == number) {
+                            scorecard[i][j] = scorecard[i][j] * -1;
+                        }
                     }
                 }
-            }
-            printCard(scorecard);
-            boolean colTest = true, rowTest = true;
 
-            for (int i = 0; i < scorecard.length; i++) {
-                colTest = testCol(scorecard, i);
-                rowTest = testRow(scorecard, i);
-            }
-            if(!colTest || !rowTest){
-                System.out.println("Congrats, you win!");
+            printCard(scorecard);
+            if (testCol(scorecard)) {
+                System.out.println("Congrats you win!");
+                break;
+            } else if (testRow(scorecard)) {
+                System.out.println("Congrats you win!");
                 break;
             }
 
@@ -63,23 +61,37 @@ public class As1_Bingo {
         } // row
     }// printSudoku
 
-    public static boolean testRow(int[][] grid, int eachRow){
-        for (int i = 0; i < grid.length; i++) {
-            if(grid[i][eachRow] < 0){
-                return false;
+    public static boolean testRow(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int negative = 0;
+            for (int j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] < 0) {
+                    negative += 1;
+                }
+            }
+            if (negative == 5) {
+                return true;
             }
         }
-        return true;
-    }//testRow
+        return false;
+    }
 
-    public static boolean testCol(int[][] grid, int colNum){
-        for (int i = 0; i < grid.length; i++) {
-            if(grid[i][colNum] < 0){
-                return false;
+    public static boolean testCol(int[][] arr) {
+        int colNum = 0;
+        for (int i = 0; i < 4; i++) {
+            int negative = 0;
+            colNum += 1;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j][colNum] < 0) {
+                    negative += 1;
+                }
+            }
+            if (negative == 5) {
+                return true;
             }
         }
-        return true;
-    }//testCol
+        return false;
+    }
 
 
 }//class

@@ -9,8 +9,10 @@ public class Main {
 //        TwoD_Arrays.Ex1_Golf.run();
 //        TwoD_Arrays.Ex2_TicTacToe.run();
 //        TwoD_Arrays.Ex3_Sudoku.run();
-        TwoD_Arrays.As1_Bingo.run();
+//        TwoD_Arrays.As1_Bingo.run();
 //        TwoD_Arrays.As2_Vigenere.run();
+        FamilyTree.FamilyTreeMain.run();
+
     }
 
 

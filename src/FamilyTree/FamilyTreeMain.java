@@ -40,21 +40,63 @@ public class FamilyTreeMain {
 //Gen 5
         person1.children.get(1).children.get(1).children.get(0).addChild(new Person("Aaron", "North Korea"));
 
+        printFamily(person1, 1);
+        System.out.println("Whole family size: " + countFamily(person1));
+
+        printCanadian(person1, 1);
+
     }//run
 
     public static int countFamily(Person ptemp) {
-        int num = 0;
+        if (!ptemp.children.isEmpty()) {
+            int num = 0;
+            for (int i = 0; i < ptemp.children.size(); i++) {
+                num += countFamily(ptemp.children.get(i));
+            }
+            return num + 1;
+        } else {
+            return 1;
+        }
 
-        return num;
     }//countFamily
 
-    public static void printCanadian(Person ptemp) {
+    public static void printCanadian(Person ptemp, int index) {
+        if (index == 1) {
+            System.out.println("Canadians in family");
+        }
+        if (!ptemp.children.isEmpty()) {
+            for (int i = 0; i < ptemp.children.size(); i++) {
+                if (ptemp.children.get(i).country.equalsIgnoreCase("Canada")) {
+                    String spacing = "";
+                    for (int j = 0; j < index; j++) spacing += " ";
+                    {
+                        System.out.println(spacing + ptemp.children.get(i).name);
+                    }
+                    printCanadian(ptemp.children.get(i),index+1 );
+                }
 
+            }
+
+        }
     }//printCanadian
 
-    public static void printFamily(Person ptemp){
+    public static void printFamily(Person ptemp, int index) {
+        if (index == 1) {
+            System.out.println("Root:" + ptemp.name);
+        }
+        if (!ptemp.children.isEmpty()) {
+            for (int i = 0; i < ptemp.children.size(); i++) {
+                String spacing = "";
+                for (int j = 0; j <= index; j++) spacing += " ";
+                {
+                    System.out.println(spacing + ptemp.children.get(i).name);
+                    printFamily(ptemp.children.get(i), index + 1);
+                }
+            }
+        }
+//got help from zev for this part
+    }//printFamily
 
-    }
 
 
 }//FamilyTreeMain

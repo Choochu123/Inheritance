@@ -1,6 +1,8 @@
 package FamilyTree;
 
+import javax.xml.transform.Source;
 import java.util.ArrayList;
+import Utilities.Library;
 
 public class FamilyTreeMain {
 
@@ -45,6 +47,11 @@ public class FamilyTreeMain {
 
         printCanadian(person1, 1);
 
+        System.out.println();
+        System.out.println("Please enter a name to search from that location:");
+        String input = Library.input.nextLine();
+        printLocation(person1, input);
+
     }//run
 
     public static int countFamily(Person ptemp) {
@@ -72,7 +79,7 @@ public class FamilyTreeMain {
                     {
                         System.out.println(spacing + ptemp.children.get(i).name);
                     }
-                    printCanadian(ptemp.children.get(i),index+1 );
+                    printCanadian(ptemp.children.get(i), index + 1);
                 }
 
             }
@@ -97,6 +104,27 @@ public class FamilyTreeMain {
 //got help from zev for this part
     }//printFamily
 
+    public static Person treeSearch(Person ptemp, String name) {
+        Person person = null;
+        if (ptemp.name.equalsIgnoreCase(name)) {
+            return ptemp;
+        }
+        if (!ptemp.children.isEmpty()) {
+            for (int i = 0; person == null && i < ptemp.children.size(); i++) {
+                person = treeSearch(ptemp.children.get(i), name);
+            }
+        }
+        return person;
+    }//treeSize
 
+    public static void printLocation(Person ptemp, String searchName) {
+        Person newRoot = treeSearch(ptemp, searchName);
+        if(newRoot == null){
+            System.out.println("This person does not exist.");
+            return;
+        }
+        printFamily(newRoot, 1);
+    }//printLocation
+    //Help from father and Zev
 
 }//FamilyTreeMain

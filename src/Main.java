@@ -11,8 +11,8 @@ public class Main {
 //        TwoD_Arrays.Ex3_Sudoku.run();
 //        TwoD_Arrays.As1_Bingo.run();
 //        TwoD_Arrays.As2_Vigenere.run();
-        FamilyTree.FamilyTreeMain.run();
-
+//        FamilyTree.FamilyTreeMain.run();
+        StringMethods.As1_Main.run();
     }
 
 

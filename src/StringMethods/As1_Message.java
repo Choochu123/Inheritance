@@ -27,10 +27,10 @@ public class As1_Message {
     }
 
     public Boolean scanWarning(String keyWord) {
-        if(warning.contains(keyWord)){
+        if(warning.contains(" " + keyWord) || warning.contains(keyWord + " ") || warning.contains(" " + keyWord + " ")){
             System.out.println(warning + "___" + machineId + "___" + machineType);
             return true;
-        } else {
+        }else{
             return false;
         }
     }

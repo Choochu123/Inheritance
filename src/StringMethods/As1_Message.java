@@ -9,8 +9,8 @@ public class As1_Message {
         String trimmed = message.trim();
         String[] splitted = trimmed.split(":");
 
-        machineId = trimmed.substring(splitted.length-1 , splitted.length);
-        machineType = trimmed.substring(0, splitted.length - 1);
+        machineId = trimmed.substring(splitted[0].length() - 1 , splitted[0].length());
+        machineType = trimmed.substring(0, splitted[0].length() - 1);
         warning = splitted[1];
     }//As1_Message
 
@@ -27,7 +27,12 @@ public class As1_Message {
     }
 
     public Boolean scanWarning(String keyWord) {
-        return false;
+        if(warning.contains(keyWord)){
+            System.out.println(warning + "___" + machineId + "___" + machineType);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String toString(){

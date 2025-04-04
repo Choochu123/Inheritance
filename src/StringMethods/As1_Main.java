@@ -28,12 +28,21 @@ public class As1_Main {
             if (option == 1) {
                 System.out.println("What is the message name?");
                 String providedMessage = Library.input.nextLine();
-
+                As1_Message newMessage = new As1_Message(providedMessage);
+                allMessages.add(newMessage);
+//                System.out.println(newMessage);
 
             } else if (option == 2) {
-
+                System.out.println("Security Message \t Machine ID \t Machine Type");
+                for (As1_Message m: allMessages){
+                    System.out.println(m.getWarning() + "___" + m.getMachineId() + "___" + m.getMachineType());
+                }
             } else if (option == 3) {
-
+                System.out.println("What is the error message?");
+                String userInput = Library.input.nextLine();
+                for (As1_Message m : allMessages){
+                    m.scanWarning(userInput);
+                }
             } else if (option == 4) {
                 System.out.println("Logging out. Good Bye.");
                 break;

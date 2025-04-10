@@ -2,6 +2,7 @@ package FamilyTree;
 
 import javax.xml.transform.Source;
 import java.util.ArrayList;
+
 import Utilities.Library;
 
 public class FamilyTreeMain {
@@ -14,6 +15,7 @@ public class FamilyTreeMain {
         person1.addChild(new Person("Susan", "Canada"));
         person1.addChild(new Person("Jill", "Canada"));
         person1.addChild(new Person("Bobette", "Zimbabwe"));
+        person1.addChild(new Person("Hans", "Canada")); //4th child
 
 //Gen 3
         //Susan
@@ -24,6 +26,7 @@ public class FamilyTreeMain {
         //Jill
         person1.children.get(1).addChild(new Person("Jonathan", "Canada"));
         person1.children.get(1).addChild(new Person("Zev", "Canada"));
+        person1.children.get(3).addChild(new Person("Alan", "England"));  //Hans' child
 
 //Gen 4
         //Zain
@@ -41,6 +44,9 @@ public class FamilyTreeMain {
 
 //Gen 5
         person1.children.get(1).children.get(1).children.get(0).addChild(new Person("Aaron", "North Korea"));
+
+
+
 
         printFamily(person1, 1);
         System.out.println("Whole family size: " + countFamily(person1));
@@ -119,7 +125,7 @@ public class FamilyTreeMain {
 
     public static void printLocation(Person ptemp, String searchName) {
         Person newRoot = treeSearch(ptemp, searchName);
-        if(newRoot == null){
+        if (newRoot == null) {
             System.out.println("This person does not exist.");
             return;
         }

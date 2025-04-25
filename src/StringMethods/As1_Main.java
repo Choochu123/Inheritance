@@ -8,12 +8,22 @@ import java.util.ArrayList;
 
 public class As1_Main {
     public static Scanner input = new Scanner(System.in);
-    static ArrayList <As1_Message> allMessages;
+    static ArrayList<As1_Message> allMessages;
 
     public static void run() {
         System.out.println("Assign 1 Network Messages");
-       allMessages = new ArrayList<>();
-       allMessages.add(new As1_Message("Server1: file not found"));
+        allMessages = new ArrayList<>();
+        allMessages.add(new As1_Message("Server1: file not found"));
+        allMessages.add(new As1_Message("Client3: repeated login failure"));
+        allMessages.add(new As1_Message("Client2:filed password reset on file"));
+        allMessages.add(new As1_Message("Server3: ping not returned"));
+        allMessages.add(new As1_Message("Server1:write file error on disk DSK1"));
+        allMessages.add(new As1_Message("Server2:disk failure on DSK2"));
+        allMessages.add(new As1_Message("Server2:diskette diskette"));
+        allMessages.add(new As1_Message("Client3:    diskette disk"));
+        allMessages.add(new As1_Message("Router1: missing packet"));
+        allMessages.add(new As1_Message("PC4: power surge detected"));
+        allMessages.add(new As1_Message("Mri4:nopingerror"));
 
         while (true) {
             System.out.println("\nWhat do you want to do?");
@@ -34,13 +44,13 @@ public class As1_Main {
 
             } else if (option == 2) {
                 System.out.println("Security Message \t Machine ID \t Machine Type");
-                for (As1_Message m: allMessages){
+                for (As1_Message m : allMessages) {
                     System.out.println(m.getWarning() + "___" + m.getMachineId() + "___" + m.getMachineType());
                 }
             } else if (option == 3) {
                 System.out.println("What is the error message?");
                 String userInput = Library.input.nextLine();
-                for (As1_Message m : allMessages){
+                for (As1_Message m : allMessages) {
                     m.scanWarning(userInput);
                 }
             } else if (option == 4) {
